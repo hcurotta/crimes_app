@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  date: 2012-07-27
+  block: MyString
+  crime_type: MyString
+  description: MyString
+  location_type: MyString
+  latitude: 1
+  longitude: 1
+
+two:
+  date: 2012-07-27
+  block: MyString
+  crime_type: MyString
+  description: MyString
+  location_type: MyString
+  latitude: 1
+  longitude: 1

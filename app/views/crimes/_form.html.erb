@@ -1,0 +1,45 @@
+<%= form_for(@crime) do |f| %>
+  <% if @crime.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@crime.errors.count, "error") %> prohibited this crime from being saved:</h2>
+
+      <ul>
+      <% @crime.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :block %><br />
+    <%= f.text_field :block %>
+  </div>
+  <div class="field">
+    <%= f.label :crime_type %><br />
+    <%= f.text_field :crime_type %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :location_type %><br />
+    <%= f.text_field :location_type %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.number_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.number_field :longitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

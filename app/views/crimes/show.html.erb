@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @crime.date %>
+</p>
+
+<p>
+  <b>Block:</b>
+  <%= @crime.block %>
+</p>
+
+<p>
+  <b>Crime type:</b>
+  <%= @crime.crime_type %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @crime.description %>
+</p>
+
+<p>
+  <b>Location type:</b>
+  <%= @crime.location_type %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @crime.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @crime.longitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_crime_path(@crime) %> |
+<%= link_to 'Back', crimes_path %>
