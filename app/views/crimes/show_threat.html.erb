@@ -1,38 +1,23 @@
-<h1>Nearby Crime</h1>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+	
+</head>
 
-<ul> 
-<li>lat <%= @lat %></li>
-<li>long <%= @long %></li>
 
-<table>
-  <tr>
-    <th>Date</th>
-	<th>Address</th>
-    <th>Block</th>
-    <th>Crime type</th>
-    <th>Description</th>
-    <th>Location type</th>
-    <!-- <th>Latitude</th> -->
-    <!-- <th>Longitude</th> -->
-    <th>Proximity (miles)</th>
-	<th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1 class="nearby_crime">Nearby Crime</h1>
+
+
 
 <% @crimes.each do |crime| %>
-  <tr>
-    <td><%= crime.date %></td>
-	<td><%= crime.address %></td>
-    <td><%= crime.block %></td>
-    <td><%= crime.crime_type %></td>
-    <td><%= crime.description %></td>
-    <td><%= crime.location_type %></td>
-
-	<td><%= crime.distance.to_f.round(2) %></td>
-    <td><%= link_to 'Show', crime %></td>
-    <td><%= link_to 'Edit', edit_crime_path(crime) %></td>
-    <td><%= link_to 'Destroy', crime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<ul class="crime_event">
+	<li class="crime_address"><%= crime.address %></li>
+	<li class="crime_type"><span class="name">Crime Type:</span> <span class="value"><%= crime.crime_type %></span></li>
+	<li class="crime_description"><span class="name">Description:</span> <span class="value"><%= crime.description %></span></li>
+	<li class="location_type"><span class="name">Location Type:</span> <span class="value"><%= crime.location_type %></span></li>
+	<li class="date"><%= crime.date %></li>
+	<li class="proximity"><%= crime.distance.to_f.round(2) %> mi.</li>
+</ul>
 <% end %>
-</table>
+
+
+

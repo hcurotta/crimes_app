@@ -118,8 +118,12 @@ $(function(){
 	  getGeoLocation();
 	</script>
 
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 
-<h1>Am I in the Hood?</h1>
+	</head>
+<h1 class="hood">Am I in the Hood?</h1>
+<div class="container2">
 <p id="error"><%= flash[:error] %></p>
 
 <%= form_tag("/crimes/show_threat", :method => 'get') do %>
@@ -152,8 +156,8 @@ $(function(){
 
 
 
-<div>
-        <strong>Mode of Travel: </strong>
+<div >
+        <strong class="mode">Mode of Travel: </strong>
         <select id="mode">
                 <option value="TRANSIT">Transit</option>
                 <option value="WALKING" selected="selected">Walking</option>
@@ -171,7 +175,7 @@ $(function(){
         <label for="isHeatmap">Heatmap</label><input type="checkbox"
 name="isHeatmap" id="isHeatmap" checked="checked"></input>
 </div>
-
+</div>
 
 
 <body onload="initialize()">
