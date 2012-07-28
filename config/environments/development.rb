@@ -34,4 +34,7 @@ CrimeApp::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  #use yahoo api
+  Geocoder::Configuration.lookup= :yahoo
 end

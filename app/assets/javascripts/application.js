@@ -19,6 +19,9 @@ function getGeoLocation() {
 }
 
 function setGeoCookie(position) {
-  var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
-  document.cookie = "lat_lng=" + escape(cookie_val);
+  var latitude = position.coords.latitude; 
+  var longitude =  position.coords.longitude;
+  document.cookie = "lat=" + escape(latitude);
+  document.cookie = "long=" + escape(longitude);
+
 }

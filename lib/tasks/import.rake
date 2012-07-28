@@ -3,7 +3,7 @@ require 'csv'
 desc "Import teams from csv file"
 task :import => [:environment] do
 
-  file = "public/test_data.csv"
+  file = "public/Crimes_-_2001_to_present.csv"
 
   CSV.foreach(file, :headers => true) do |row|
     c=Crime.new

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120728054335) do
+ActiveRecord::Schema.define(:version => 20120728093957) do
 
   create_table "crimes", :force => true do |t|
     t.date     "date"
@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(:version => 20120728054335) do
     t.string   "crime_type"
     t.string   "description"
     t.string   "location_type"
-    t.decimal  "latitude",      :precision => 9, :scale => 6
-    t.decimal  "longitude",     :precision => 9, :scale => 6
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
+    t.float    "latitude",      :limit => 9
+    t.float    "longitude",     :limit => 9
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "address"
   end
 
 end

@@ -1,0 +1,7 @@
+<h1>Am I in the Hood?</h1>
+
+<%= form_tag("/crimes/show_threat", :method => 'get') do %>
+<%= label_tag(:radius, "Search Radius:") %>
+<%= text_field_tag(:radius) %>
+<%= submit_tag("Search") %>
+<% end %>

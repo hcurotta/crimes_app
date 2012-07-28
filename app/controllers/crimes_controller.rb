@@ -9,14 +9,15 @@ class CrimesController < ApplicationController
       format.json { render json: @crimes }
     end
     
-    @lat_lng = cookies[:lat_lng]
-    # .split("|")
-    
   end
 
   # GET /crimes/1
   # GET /crimes/1.json
   def show
+    
+    @lat = cookies[:lat]
+    @long = cookies[:long]
+    
     @crime = Crime.find(params[:id])
 
     respond_to do |format|
@@ -85,5 +86,18 @@ class CrimesController < ApplicationController
     end
   end
   
+  def show_threat
+    @radius = params[:radius]
+    
+    @lat = cookies[:lat].to_f
+    @long = cookies[:long].to_f
+    
+    @crimes = Crime.near("#{@lat},#{@long}",@radius,:order => :distance)
+  
+  end
+  
+  def front_page
+    
+  end
   
 end

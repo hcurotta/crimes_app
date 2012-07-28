@@ -1,22 +1,21 @@
-<%- unless @lat %>
-<script>
-  getGeoLocation();
-</script>
-<%- end %>
+<h1>Nearby Crime</h1>
 
-<h1>Listing crimes</h1>
-
+<ul> 
+<li>lat <%= @lat %></li>
+<li>long <%= @long %></li>
 
 <table>
   <tr>
     <th>Date</th>
+	<th>Address</th>
     <th>Block</th>
     <th>Crime type</th>
     <th>Description</th>
     <th>Location type</th>
-    <th>Latitude</th>
-    <th>Longitude</th>
-    <th></th>
+    <!-- <th>Latitude</th> -->
+    <!-- <th>Longitude</th> -->
+    <th>Proximity (miles)</th>
+	<th></th>
     <th></th>
     <th></th>
   </tr>
@@ -24,21 +23,17 @@
 <% @crimes.each do |crime| %>
   <tr>
     <td><%= crime.date %></td>
+	<td><%= crime.address %></td>
     <td><%= crime.block %></td>
     <td><%= crime.crime_type %></td>
     <td><%= crime.description %></td>
     <td><%= crime.location_type %></td>
-    <td><%= crime.latitude %></td>
-    <td><%= crime.longitude %></td>
+    <!-- <td><%= crime.latitude %></td> -->
+    <!-- <td><%= crime.longitude %></td> -->
+	<td><%= crime.distance.round(2) %></td>
     <td><%= link_to 'Show', crime %></td>
     <td><%= link_to 'Edit', edit_crime_path(crime) %></td>
     <td><%= link_to 'Destroy', crime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
-<br />
-
-<%= link_to 'New Crime', new_crime_path %>
-
-
-
