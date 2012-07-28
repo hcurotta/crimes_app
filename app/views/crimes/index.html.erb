@@ -29,7 +29,13 @@
   </tr>
 <% end %>
 </table>
-
 <br />
 
 <%= link_to 'New Crime', new_crime_path %>
+
+<%- unless @lat_lng %>
+<script>
+  getGeoLocation();
+</script>
+<%- end %>
+

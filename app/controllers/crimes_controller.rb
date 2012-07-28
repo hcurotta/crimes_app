@@ -8,6 +8,9 @@ class CrimesController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @crimes }
     end
+    
+    @lat_lng = cookies[:lat_lng].split("|")
+    
   end
 
   # GET /crimes/1
@@ -80,4 +83,6 @@ class CrimesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
 end
