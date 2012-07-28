@@ -9,7 +9,8 @@ class CrimesController < ApplicationController
       format.json { render json: @crimes }
     end
     
-    @lat_lng = cookies[:lat_lng].split("|")
+    @lat_lng = cookies[:lat_lng]
+    # .split("|")
     
   end
 
