@@ -87,7 +87,14 @@ class CrimesController < ApplicationController
   end
   
   def show_threat
-    @radius = params[:radius]
+    
+    if params[:radius].to_i <= 2
+      @radius = params[:radius]
+    else
+      redirect_to front_page_path, :flash => { :error => "Radius cannot be greater than 2 miles" }
+      return
+    end
+    
     
     @lat = cookies[:lat].to_f
     @long = cookies[:long].to_f

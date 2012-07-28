@@ -75,10 +75,33 @@ layer.setMap(map);
 
 
 <h1>Am I in the Hood?</h1>
+<p id="error"><%= flash[:error] %></p>
 
 <%= form_tag("/crimes/show_threat", :method => 'get') do %>
 <%= label_tag(:radius, "Search Radius:") %>
-<%= text_field_tag(:radius) %>
+<select name = "radius">
+  <option value="0.1">0.1 miles</option>
+  <option value="0.2">0.2 miles</option>
+  <option value="0.3">0.3 miles</option>
+  <option value="0.4">0.4 miles</option>
+  <option value="0.5">0.5 miles</option>
+  <option value="0.6">0.6 miles</option>
+  <option value="0.7">0.7 miles</option>
+  <option value="0.8">0.8 miles</option>
+  <option value="0.9">0.9 miles</option>
+  <option value="1">1 mile</option>
+  <option value="1.1">1.1 miles</option>
+  <option value="1.2">1.2 miles</option>
+  <option value="1.3">1.3 miles</option>
+  <option value="1.4">1.4 miles</option>
+  <option value="1.5">1.5 miles</option>
+  <option value="1.6">1.6 miles</option>
+  <option value="1.7">1.7 miles</option>
+  <option value="1.8">1.8 miles</option>
+  <option value="1.9">1.9 miles</option>
+  <option value="2">2 miles</option>
+</select>
+
 <%= submit_tag("Search") %>
 <% end %>
 
