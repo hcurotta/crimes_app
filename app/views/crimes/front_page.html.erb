@@ -18,11 +18,13 @@
 
 <script type="text/javascript">
 
+
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
 var start = new google.maps.LatLng(41.86593, -87.64686);
 var end = new google.maps.LatLng(41.88897, -87.63392);
+var isHeatmap = true;
 
 
 function initialize() {
@@ -46,7 +48,7 @@ google.maps.Map(document.getElementById("map_canvas"), mapOptions);
                         from: '1KlcxGqe8GBKtCaeA0Pvjbd701kygcwjoOsn14fQ'
                 },
 heatmap: {
-                        enabled: true
+                        enabled: isHeatmap
                 }
         })
 
@@ -83,6 +85,17 @@ $(function(){
         })
 
 
+
+        $("#isHeatmap").change(function() {
+                        isHeatmap = $("#isHeatmap").is(":checked");
+                        initialize();
+                        calcRoute();
+        })
+
+
+        $("#isHeatmap").is(":checked")
+
+
         $("#update-route").click(function(event){
                         event.preventDefault();
 
@@ -97,8 +110,8 @@ $(function(){
 
                         calcRoute();
         });
-})
 
+})
     </script>
 
 	<script>
@@ -155,6 +168,8 @@ $(function(){
 
         <label for="to">End</label><input type="text" id="to" name="to" /><br>
         <p><button type="submit" id="update-route">Get me outta here!</button></p>
+        <label for="isHeatmap">Heatmap</label><input type="checkbox"
+name="isHeatmap" id="isHeatmap" checked="checked"></input>
 </div>
 
 
