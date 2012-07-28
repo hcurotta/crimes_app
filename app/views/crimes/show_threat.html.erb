@@ -28,9 +28,8 @@
     <td><%= crime.crime_type %></td>
     <td><%= crime.description %></td>
     <td><%= crime.location_type %></td>
-    <!-- <td><%= crime.latitude %></td> -->
-    <!-- <td><%= crime.longitude %></td> -->
-	<td><%= crime.distance.round(2) %></td>
+
+	<td><%= crime.distance.to_f.round(2) %></td>
     <td><%= link_to 'Show', crime %></td>
     <td><%= link_to 'Edit', edit_crime_path(crime) %></td>
     <td><%= link_to 'Destroy', crime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
